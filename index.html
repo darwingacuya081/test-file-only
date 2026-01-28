@@ -2,57 +2,28 @@
 <html>
 <head>
   <style>
-    <title>HMR & Attendance</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
 
-    body {
-    font-family: Arial, sans-serif;
-    background: #e9edf2;
-  }
-  
-  .container {
-    max-width: 420px;
-    margin: auto;
-    padding: 10px;
-  }
-  
-  .card {
-    background: white;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-  }
-  
-  h2 {
-    text-align: center;
-  }
-  
-  h3 {
-    margin-bottom: 10px;
-  }
-  
-  input, select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 8px;
-  }
-  
-  .add {
-    margin-top: 10px;
-    background: #f1c40f;
-    border: none;
-    padding: 10px;
-    width: 100%;
-  }
-  
-  .submit {
-    background: #0078D4;
-    color: white;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    font-size: 16px;
-  }
+th, td {
+  border: 1px solid #ccc;
+  padding: 5px;
+  text-align: center;
+}
+
+th {
+  background: #f1f1f1;
+  font-size: 12px;
+}
+
+td input, td select {
+  width: 100%;
+  padding: 5px;
+}
+
   </style>
 </head>
 
@@ -64,47 +35,106 @@
     <!-- HEADER -->
     <div class="card">
       <label>Date</label>
-      <input type="date" id="date">
+      <input type="date">
 
       <label>Site</label>
-      <select id="site">
-        <option value="CP1">CP1</option>
-        <option value="CP2">CP2</option>
+      <select>
+        <option>CP1</option>
+        <option>CP2</option>
       </select>
     </div>
 
-    <!-- MANPOWER -->
+    <!-- MANPOWER TABLE -->
     <div class="card">
       <h3>Manpower</h3>
 
-      <input type="text" placeholder="Worker Name">
-      <select>
-        <option>HEO</option>
-        <option>Nightshift</option>
-        <option>Spotter</option>
-        <option>Helper</option>
-      </select>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Work Hrs</th>
+            <th>OT Hrs</th>
+          </tr>
+        </thead>
+        <tbody id="manpowerBody">
+          <tr>
+            <td><input></td>
+            <td>
+              <select>
+                <option>HEO</option>
+                <option>Nightshift</option>
+                <option>Spotter</option>
+                <option>Helper</option>
+              </select>
+            </td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+        </tbody>
+      </table>
 
-      <input type="number" placeholder="Work Hours">
-      <input type="number" placeholder="OT Hours">
-
-      <button class="add">+ Add Worker</button>
+      <button class="add" onclick="addManpower()">+ Add Row</button>
     </div>
 
-    <!-- EQUIPMENT -->
+    <!-- EQUIPMENT TABLE -->
     <div class="card">
       <h3>Equipment HMR</h3>
 
-      <input type="text" placeholder="Equipment Name">
-      <input type="number" placeholder="Before HMR">
-      <input type="number" placeholder="After HMR">
+      <table>
+        <thead>
+          <tr>
+            <th>Equipment</th>
+            <th>Before</th>
+            <th>After</th>
+          </tr>
+        </thead>
+        <tbody id="equipmentBody">
+          <tr>
+            <td><input></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+        </tbody>
+      </table>
 
-      <button class="add">+ Add Equipment</button>
+      <button class="add" onclick="addEquipment()">+ Add Row</button>
     </div>
 
     <button class="submit">Submit</button>
 
   </div>
+
+  <script>
+    function addManpower() {
+      document.getElementById("manpowerBody").insertAdjacentHTML("beforeend", `
+        <tr>
+          <td><input></td>
+          <td>
+            <select>
+              <option>HEO</option>
+              <option>Nightshift</option>
+              <option>Spotter</option>
+              <option>Helper</option>
+            </select>
+          </td>
+          <td><input type="number"></td>
+          <td><input type="number"></td>
+        </tr>
+      `);
+    }
+
+    function addEquipment() {
+      document.getElementById("equipmentBody").insertAdjacentHTML("beforeend", `
+        <tr>
+          <td><input></td>
+          <td><input type="number"></td>
+          <td><input type="number"></td>
+        </tr>
+      `);
+    }
+  </script>
 </body>
+
 
 </html>
