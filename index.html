@@ -4,54 +4,106 @@
   <title>HMR & Attendance</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
-    }
-    .container {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      max-width: 400px;
-      margin: auto;
-    }
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-    }
-    button {
-      background: #0078D4;
-      color: white;
-      border: none;
-      font-size: 16px;
-    }
-  </style>
+  body {
+  font-family: Arial, sans-serif;
+  background: #e9edf2;
+}
+
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 10px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+.add {
+  margin-top: 10px;
+  background: #f1c40f;
+  border: none;
+  padding: 10px;
+  width: 100%;
+}
+
+.submit {
+  background: #0078D4;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-size: 16px;
+}
+
 </head>
 
 <body>
   <div class="container">
-    <h2>Worker HMR & Attendance</h2>
 
-    <input type="date" id="date">
-    <input type="text" id="empid" placeholder="Employee ID">
-    <input type="text" id="name" placeholder="Worker Name">
-    <input type="time" id="timein">
-    <input type="time" id="timeout">
-    <input type="number" id="hmr" placeholder="HMR">
+    <h2>HMR & Attendance</h2>
 
-    <button onclick="submitData()">Submit</button>
+    <!-- HEADER -->
+    <div class="card">
+      <label>Date</label>
+      <input type="date" id="date">
 
-    <p id="status"></p>
+      <label>Site</label>
+      <select id="site">
+        <option value="CP1">CP1</option>
+        <option value="CP2">CP2</option>
+      </select>
+    </div>
+
+    <!-- MANPOWER -->
+    <div class="card">
+      <h3>Manpower</h3>
+
+      <input type="text" placeholder="Worker Name">
+      <select>
+        <option>HEO</option>
+        <option>Nightshift</option>
+        <option>Spotter</option>
+        <option>Helper</option>
+      </select>
+
+      <input type="number" placeholder="Work Hours">
+      <input type="number" placeholder="OT Hours">
+
+      <button class="add">+ Add Worker</button>
+    </div>
+
+    <!-- EQUIPMENT -->
+    <div class="card">
+      <h3>Equipment HMR</h3>
+
+      <input type="text" placeholder="Equipment Name">
+      <input type="number" placeholder="Before HMR">
+      <input type="number" placeholder="After HMR">
+
+      <button class="add">+ Add Equipment</button>
+    </div>
+
+    <button class="submit">Submit</button>
+
   </div>
-
-  <script>
-    function submitData() {
-      document.getElementById("status").innerText =
-        "Form is working. Automation will be added next.";
-    }
-  </script>
 </body>
+
 </html>
