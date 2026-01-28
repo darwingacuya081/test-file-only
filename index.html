@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HMR & Attendance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    button {
+      background: #0078D4;
+      color: white;
+      border: none;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Worker HMR & Attendance</h2>
+
+    <input type="date" id="date">
+    <input type="text" id="empid" placeholder="Employee ID">
+    <input type="text" id="name" placeholder="Worker Name">
+    <input type="time" id="timein">
+    <input type="time" id="timeout">
+    <input type="number" id="hmr" placeholder="HMR">
+
+    <button onclick="submitData()">Submit</button>
+
+    <p id="status"></p>
+  </div>
+
+  <script>
+    function submitData() {
+      document.getElementById("status").innerText =
+        "Form is working. Automation will be added next.";
+    }
+  </script>
+</body>
+</html>
