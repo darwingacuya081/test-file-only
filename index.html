@@ -23,6 +23,11 @@ td input, td select {
   width: 100%;
   padding: 5px;
 }
+    .group td {
+  background: #fff3cd;
+  text-align: left;
+}
+
 
   </style>
 </head>
@@ -46,64 +51,106 @@ td input, td select {
 
     <!-- MANPOWER TABLE -->
     <div class="card">
-      <h3>Manpower</h3>
+  <h3>Manpower</h3>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Role</th>
-            <th>Work Hrs</th>
-            <th>OT Hrs</th>
-          </tr>
-        </thead>
-        <tbody id="manpowerBody">
-          <tr>
-            <td><input></td>
-            <td>
-              <select>
-                <option>HEO</option>
-                <option>Nightshift</option>
-                <option>Spotter</option>
-                <option>Helper</option>
-              </select>
-            </td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-          </tr>
-        </tbody>
-      </table>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Work Hrs</th>
+        <th>OT Hrs</th>
+      </tr>
+    </thead>
+    <tbody>
 
-      <button class="add" onclick="addManpower()">+ Add Row</button>
-    </div>
+      <!-- HEO -->
+      <tr class="group">
+        <td colspan="4"><strong>HEO</strong></td>
+      </tr>
+
+      <tr>
+        <td>Michael Pedres</td>
+        <td>HEO</td>
+        <td><input type="number"></td>
+        <td><input type="number"></td>
+      </tr>
+
+      <tr>
+        <td>Edmundo Aragdon</td>
+        <td>HEO</td>
+        <td><input type="number"></td>
+        <td><input type="number"></td>
+      </tr>
+
+      <tr>
+        <td>Florentino Estrella</td>
+        <td>HEO</td>
+        <td><input type="number"></td>
+        <td><input type="number"></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
 
     <!-- EQUIPMENT TABLE -->
     <div class="card">
-      <h3>Equipment HMR</h3>
+  <h3>Equipment HMR</h3>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Equipment</th>
-            <th>Before</th>
-            <th>After</th>
-          </tr>
-        </thead>
-        <tbody id="equipmentBody">
-          <tr>
-            <td><input></td>
-            <td><input type="number"></td>
-            <td><input type="number"></td>
-          </tr>
-        </tbody>
-      </table>
+  <table>
+    <thead>
+      <tr>
+        <th>Equipment</th>
+        <th>Before</th>
+        <th>After</th>
+      </tr>
+    </thead>
+    <tbody>
 
-      <button class="add" onclick="addEquipment()">+ Add Row</button>
-    </div>
+      <tr>
+        <td>VOLVO EC290 BLC (EX34)</td>
+        <td><input type="number"></td>
+        <td><input type="number"></td>
+      </tr>
 
-    <button class="submit">Submit</button>
+      <tr>
+        <td>EX24</td>
+        <td><input type="number"></td>
+        <td><input type="number"></td>
+      </tr>
 
-  </div>
+      <tr>
+        <td>VOLVO EC210 D (EX26)</td>
+        <td><input type="number"></td>
+        <td><input type="number"></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+  <!-- VOLUME TABLE --> 
+    <div class="card">
+  <h3>Volume</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>CP1</th>
+        <th>CP2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="number"></td>
+        <td><input type="number"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
   <script>
     function addManpower() {
